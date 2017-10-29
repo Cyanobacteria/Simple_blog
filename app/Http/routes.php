@@ -11,10 +11,20 @@
 |
 */
 
+Route::get('time', function () {
+    return date("Y-m-d H:i:s");
+});
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
