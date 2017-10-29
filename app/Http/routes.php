@@ -28,3 +28,11 @@ Route::auth();
 //Route::get('/home', 'HomeController@index');
 //Route::get('/home', 'HomeController@index');
 Route::get('/', 'HomeController@index');
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'],function (){
+
+    Route::get('/', 'HomeController@index');
+
+});
+
+
