@@ -44,7 +44,12 @@ class ArticleController extends Controller
 
     }
 
+    public function edit($id){
+        
+       return view('admin/article/edit')->withArticle(Article::find($id));
 
+
+    }
 
 
 
