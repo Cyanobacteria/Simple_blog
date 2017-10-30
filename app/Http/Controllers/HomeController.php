@@ -25,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->withArticles(\App\Article::all());
+
+       echo "我是App\Http\Controller 下的HomeComtroller";
+       // return view('home')->withArticles(\App\Article::all());
     }
 }

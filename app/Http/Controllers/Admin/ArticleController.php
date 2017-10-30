@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
-
+namespace App\Http\Controllers\Admin; //確定位置
+//以下各種引入
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
