@@ -152,6 +152,10 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'
 //下面這是5.2的
 Route::group(['prefix' => 'Aa', 'namespace' => 'Aa'], function(){
     Route::get('pc/{id}/{name}', 'PracticeController@info');
+    Route::any('dbtest', 'PracticeController@dbtest');
+    Route::get('query1', 'PracticeController@query1');
+    Route::get('query2', 'PracticeController@query2');
+
 });
 
 /*
