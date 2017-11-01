@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\DB;
 class PracticeController extends Controller
 {
 
-    public function info($id, $name ){
-       // return "ID = $id";
+    public function info($name, $id ){
+        // EX route localhost/aa/{a}/{b}
+        //直接進去Controller 是按照順序的 1.a 2.b   要取啥名子也都可以，不要看不懂就好了
+        //暫時這樣下課再驗證
+        // return "ID = $id";
         //一般函數內的路徑是用 "/"
         return view('test/test1',['id' => $id,'name' => $name ]);  
 
@@ -57,6 +60,19 @@ class PracticeController extends Controller
        var_dump($number); //修改行數       
 
     }
+
+    public function query3(){
+        
+
+
+
+    }
+    public function query4(){}
+    public function query5(){}
+    public function query6(){}
+
+
+
 
 }    
 

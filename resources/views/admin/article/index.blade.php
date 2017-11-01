@@ -23,6 +23,10 @@
                                 <p>
                                     {{ $article->body }}
                                 </p>
+                                <br>
+                                <p>發表於  {{$article->created_at}}<p>
+                                <br>
+                                <p>更新於  {{$article->updated_at}}<p>
                             </div>
                         </div>
                         <a href="{{ url('admin/article/'.$article->id.'/edit') }}" class="btn btn-success">编辑</a>

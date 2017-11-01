@@ -150,11 +150,14 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'
 // 這行也是失敗的錯誤是namespace method 沒有被定義  Route::namespace('Aa')->get('/pc/{id}', ['uses' => 'PracticeController@info','as' => 'cp','prefix' => 'pcpc']);
 //Route::namespace()->group......似乎是5.5的作法
 //下面這是5.2的
+
+//給PracticeController用的測試區
 Route::group(['prefix' => 'Aa', 'namespace' => 'Aa'], function(){
-    Route::get('pc/{id}/{name}', 'PracticeController@info');
+    Route::get('pc/{name}/{id}', 'PracticeController@info');
     Route::any('dbtest', 'PracticeController@dbtest');
     Route::get('query1', 'PracticeController@query1');
     Route::get('query2', 'PracticeController@query2');
+    Route::get('query3', 'PracticeController@query3');
 
 });
 
