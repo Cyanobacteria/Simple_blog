@@ -151,7 +151,7 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'
 //Route::namespace()->group......似乎是5.5的作法
 //下面這是5.2的
 Route::group(['prefix' => 'Aa', 'namespace' => 'Aa'], function(){
-    Route::get('pc/{id}', 'PracticeController@info');
+    Route::get('pc/{id}/{name}', 'PracticeController@info');
 });
 
 /*
