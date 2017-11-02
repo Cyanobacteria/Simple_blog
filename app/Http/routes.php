@@ -14,12 +14,20 @@ post
 put 
 patch
 delete
-
-
-
-
-
 */
+
+
+//<以下是這支程式用到的route 其他是練習>
+Route::auth();
+Route::get('/home', 'HomeController@index');
+Route::get('/article/{id}', 'ArticleController@show');
+Route::post('comment', 'CommentController@store');
+Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'],function (){
+    Route::get('/', 'HomeController@index');
+    Route::resource('article', 'ArticleController');
+});
+//----------------------------------------------以上
+
 
 //Route::get();
 //三個東西組成上一下二
@@ -102,10 +110,11 @@ Route::group(['prefix' => 'member'], function(){
 
 
 
-
+/*
 Route::get('time', function () {
     return date("Y-m-d H:i:s");
 });
+*/
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -119,29 +128,6 @@ Route::get("test5/$id", function($id){
 
 });
 */
-
-
-Route::auth();
-
-//Route::get('/home', 'HomeController@index');
-//Route::get('/home', 'HomeController@index');
-//Route::get('/home', 'HomeController@index');
-
-
-
-//Route::get('/', 'HomeController@index');
-
-Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'],function (){
-
-    Route::get('/', 'HomeController@index');
-    Route::resource('article', 'ArticleController');
-
-});
-
-
-
-
-
 //For PracticeController
 //如果綁定給controller了就不需要寫成/pc/{id?}   ||   'uses','as','middleware','prefix','namespace' 
 //Route::get();  好像不支援namespace? 
