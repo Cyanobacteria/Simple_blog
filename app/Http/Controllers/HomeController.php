@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
 
       // echo "我是App\Http\Controller 下的HomeComtroller";
+        //返回全部Article
         return view('home')->withArticles(\App\Article::all());
     }
 }

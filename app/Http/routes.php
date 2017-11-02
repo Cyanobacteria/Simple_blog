@@ -21,7 +21,7 @@ delete
 //後台登入用
 Route::auth();
 //使用者瀏覽所有Article
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 //顯示單一Article 並提供留言功能
 Route::get('/article/{id}', 'ArticleController@show');
 //存儲留言到資料庫

@@ -6,7 +6,7 @@ use App\Comment;
 class CommentController extends Controller
 {
     public function store(Request $request)
-    {
+    {   //如果存入為真
         if (Comment::create($request->all())) {
             return redirect()->back();
         } else {
