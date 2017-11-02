@@ -8,7 +8,7 @@ class Article extends Model
 {
     //
      public function hasManyComments()
-    {
+    {   //Article 有 Comments
         return $this->hasMany('App\Comment', 'article_id', 'id');
     }
 }

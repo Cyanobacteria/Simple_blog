@@ -18,12 +18,18 @@ delete
 
 
 //<以下是這支程式用到的route 其他是練習>
+//後台登入用
 Route::auth();
+//使用者瀏覽所有Article
 Route::get('/home', 'HomeController@index');
+//顯示單一Article 並提供留言功能
 Route::get('/article/{id}', 'ArticleController@show');
+//存儲留言到資料庫
 Route::post('comment', 'CommentController@store');
+//Admin群組route 
 Route::group(['middleware' => 'auth','namespace' => 'Admin', 'prefix' => 'admin'],function (){
     Route::get('/', 'HomeController@index');
+    //一條指令 CRUD所需的路徑
     Route::resource('article', 'ArticleController');
 });
 //----------------------------------------------以上
@@ -138,6 +144,7 @@ Route::get("test5/$id", function($id){
 //下面這是5.2的
 
 //給PracticeController用的測試區
+
 Route::group(['prefix' => 'Aa', 'namespace' => 'Aa'], function(){
     Route::get('pc/{name}/{id}', 'PracticeController@info');
     Route::any('dbtest', 'PracticeController@dbtest');
@@ -150,7 +157,7 @@ Route::group(['prefix' => 'Aa', 'namespace' => 'Aa'], function(){
 /*
 要用網址傳入數據話的話
 1. XXXX/{id}/{aa}/{bb} 
-2.在相應的controller中相應的method ex:   public function($id, $aa, $bb) {    } 就可以直接用了
+2.在相應的controller中相應的method ex:   public function($id, $aa, $bb) {    } 就可以直接用了(是順序？還是對應?)
 3.驗證判斷在Route::get()->where('id','正規表達式');  在route就可以劫下來
 
 
